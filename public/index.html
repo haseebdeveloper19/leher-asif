@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="/copyleaks">
+        <input type="email" name="phone" id="phone" placeholder="phone no"/>
+
+        
+        <button class="btn btn-info" onclick="SendData()">Send</button>
+    </form>
+
+    <script>
+        SendData = () =>{
+         let phone =  document.getElementById('phone').value
+
+         var options = {
+
+method: "POST",
+body: JSON.stringify({ phone : phone }),
+headers: {
+  "Content-Type": "application/json"
+}
+}
+
+fetch('/copyleaks',)
+.then((res) =>{ res.json()})
+.catch((error) => console.log(error))
+
+// this.toggle()
+
+}
+                                               
+    </script>
+</body>
+</html>
